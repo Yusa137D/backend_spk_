@@ -6,3 +6,4 @@ gunicorn
 requests
 pandas
 numpy
+fpdf
