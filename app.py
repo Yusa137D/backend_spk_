@@ -21,4 +21,9 @@ def index():
     return jsonify({"message": "Backend SPK Guru Modular Aktif!"})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    import os
+
+    # Mengambil port dari sistem (Railway), jika tidak ada baru pakai 5000
+    port = int(os.environ.get("PORT", 5000))
+    # Host harus 0.0.0.0 agar bisa diakses secara publik di server
+    app.run(host='0.0.0.0', port=port)
